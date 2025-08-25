@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import {
   Carousel,
@@ -7,11 +6,17 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import type { CarouselApi } from "@/components/ui/carousel";
 
 const GalleryCarousel = () => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
+  const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
 
   const images = [
     {
@@ -94,6 +99,10 @@ const GalleryCarousel = () => {
     };
   }, [api]);
 
+  const handleImageClick = (image: { src: string; alt: string }) => {
+    setSelectedImage(image);
+  };
+
   return (
     <section className="py-16 bg-gradient-to-br from-accent/5 to-secondary/5">
       <div className="container mx-auto px-4">
@@ -120,18 +129,37 @@ const GalleryCarousel = () => {
                 {images.map((image, index) => (
                   <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                     <div className="p-2">
-                      <div className="relative overflow-hidden rounded-lg shadow-lg group">
-                        <img
-                          src={image.src}
-                          alt={image.alt}
-                          className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
-                          loading="lazy"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                        <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <p className="text-sm font-medium">{image.alt}</p>
-                        </div>
-                      </div>
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <div 
+                            className="relative overflow-hidden rounded-lg shadow-lg group cursor-pointer"
+                            onClick={() => handleImageClick(image)}
+                          >
+                            <img
+                              src={image.src}
+                              alt={image.alt}
+                              className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                              loading="lazy"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                            <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                              <p className="text-sm font-medium">{image.alt}</p>
+                            </div>
+                          </div>
+                        </DialogTrigger>
+                        <DialogContent className="max-w-4xl p-0 bg-transparent border-0">
+                          <div className="relative">
+                            <img
+                              src={image.src}
+                              alt={image.alt}
+                              className="w-full h-auto max-h-[90vh] object-contain rounded-lg"
+                            />
+                            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                              <p className="text-white text-lg font-medium text-center">{image.alt}</p>
+                            </div>
+                          </div>
+                        </DialogContent>
+                      </Dialog>
                     </div>
                   </CarouselItem>
                 ))}
