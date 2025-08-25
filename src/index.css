@@ -70,13 +70,7 @@
 @layer components {
   /* Hero Section Styles */
   .hero-section {
-    background: var(--gradient-hero);
     @apply relative overflow-hidden;
-  }
-
-  .hero-section::before {
-    content: '';
-    @apply absolute inset-0 bg-black/10;
   }
 
   /* Section Styles */

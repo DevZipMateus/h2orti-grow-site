@@ -12,6 +12,17 @@ const Hero = () => {
 
   return (
     <section id="inicio" className="hero-section min-h-screen flex items-center justify-center relative">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url(/lovable-uploads/593ab192-0aac-4b70-8709-1b4e5d768cb8.png)'
+        }}
+      />
+      
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/40" />
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center text-white">
           {/* Badge */}
