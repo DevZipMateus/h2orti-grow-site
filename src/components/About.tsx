@@ -74,18 +74,18 @@ const About = () => {
             </div>
 
             {/* Image */}
-            <div className="relative">
-              <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative lg:pl-8">
+              <div className="w-full max-w-md mx-auto lg:max-w-none aspect-square rounded-2xl overflow-hidden shadow-2xl">
                 <img 
                   src="/lovable-uploads/1ec50383-42d1-4f28-8379-d91e4fb5fd4f.png" 
                   alt="H2orti Hidroponia - Produção sustentável de hortaliças" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain bg-white p-4"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-secondary text-white p-6 rounded-xl shadow-lg animate-pulse-green">
+              <div className="absolute -bottom-4 -right-4 lg:-bottom-6 lg:-right-6 bg-secondary text-white p-4 lg:p-6 rounded-xl shadow-lg animate-pulse-green">
                 <div className="text-center">
-                  <div className="text-2xl font-bold">2014</div>
-                  <div className="text-sm">Fundação</div>
+                  <div className="text-xl lg:text-2xl font-bold">2014</div>
+                  <div className="text-xs lg:text-sm">Fundação</div>
                 </div>
               </div>
             </div>
