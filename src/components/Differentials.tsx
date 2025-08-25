@@ -42,47 +42,47 @@ const Differentials = () => {
   ];
 
   return (
-    <section id="diferenciais" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+    <section id="diferenciais" className="py-12 sm:py-16 lg:py-20 bg-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-gradient mb-6">Nossos Diferenciais</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-gradient mb-4 sm:mb-6">Nossos Diferenciais</h2>
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
               Combinamos tecnologia, sustentabilidade e experiência para oferecer produtos de qualidade superior
             </p>
           </div>
 
           {/* Differentials Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
             {differentials.map((differential, index) => (
               <div key={index} className="group text-center">
                 {/* Icon */}
-                <div className={`w-20 h-20 rounded-2xl ${differential.color} flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300 shadow-lg`}>
-                  <differential.icon className="w-10 h-10" />
+                <div className={`w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 rounded-xl sm:rounded-2xl ${differential.color} flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-all duration-300 shadow-lg`}>
+                  <differential.icon className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10" />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-bold text-foreground mb-4">{differential.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{differential.description}</p>
+                <h3 className="text-lg sm:text-xl font-bold text-foreground mb-3 sm:mb-4 px-2">{differential.title}</h3>
+                <p className="text-muted-foreground leading-relaxed text-sm sm:text-base px-4">{differential.description}</p>
               </div>
             ))}
           </div>
 
           {/* Stats Section */}
-          <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl p-8 border border-accent/20">
-            <div className="grid md:grid-cols-3 gap-8 text-center">
+          <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-accent/20">
+            <div className="grid sm:grid-cols-3 gap-6 sm:gap-8 text-center">
               <div>
-                <div className="text-4xl font-bold text-primary mb-2">90%</div>
-                <div className="text-muted-foreground">Menos Água Utilizada</div>
+                <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">90%</div>
+                <div className="text-muted-foreground text-sm sm:text-base">Menos Água Utilizada</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-secondary mb-2">100%</div>
-                <div className="text-muted-foreground">Livre de Agrotóxicos</div>
+                <div className="text-3xl sm:text-4xl font-bold text-secondary mb-2">100%</div>
+                <div className="text-muted-foreground text-sm sm:text-base">Livre de Agrotóxicos</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-primary mb-2">365</div>
-                <div className="text-muted-foreground">Dias de Produção</div>
+                <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">365</div>
+                <div className="text-muted-foreground text-sm sm:text-base">Dias de Produção</div>
               </div>
             </div>
           </div>

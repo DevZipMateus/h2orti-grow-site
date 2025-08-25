@@ -48,36 +48,36 @@ const Products = () => {
   ];
 
   return (
-    <section id="produtos" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+    <section id="produtos" className="py-12 sm:py-16 lg:py-20 bg-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-gradient mb-6">Nossos Produtos</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-gradient mb-4 sm:mb-6">Nossos Produtos</h2>
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
               Hortaliças hidropônicas de alta qualidade, produzidas com tecnologia sustentável e cuidado especial
             </p>
           </div>
 
           {/* Products Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
             {products.map((product, index) => (
               <div key={index} className="product-card group">
-                <div className="p-6">
+                <div className="p-4 sm:p-6">
                   {/* Icon */}
-                  <div className={`w-16 h-16 rounded-xl ${product.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    <product.icon className="w-8 h-8" />
+                  <div className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-lg sm:rounded-xl ${product.color} flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <product.icon className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8" />
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-xl font-bold text-foreground mb-3">{product.name}</h3>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">{product.description}</p>
+                  <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2 sm:mb-3">{product.name}</h3>
+                  <p className="text-muted-foreground mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">{product.description}</p>
 
                   {/* Features */}
                   <div className="space-y-2">
                     {product.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center text-sm text-muted-foreground">
-                        <div className="w-1.5 h-1.5 bg-secondary rounded-full mr-3"></div>
+                      <div key={featureIndex} className="flex items-center text-xs sm:text-sm text-muted-foreground">
+                        <div className="w-1.5 h-1.5 bg-secondary rounded-full mr-3 flex-shrink-0"></div>
                         {feature}
                       </div>
                     ))}
@@ -88,19 +88,19 @@ const Products = () => {
           </div>
 
           {/* CTA Section */}
-          <div className="text-center bg-gradient-to-r from-accent/10 to-secondary/10 rounded-2xl p-8 border border-accent/20">
-            <h3 className="text-2xl font-bold text-foreground mb-4">
+          <div className="text-center bg-gradient-to-r from-accent/10 to-secondary/10 rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-accent/20">
+            <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3 sm:mb-4">
               Interested in our fresh produce?
             </h3>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+            <p className="text-muted-foreground mb-4 sm:mb-6 max-w-2xl mx-auto text-sm sm:text-base px-4">
               Entre em contato conosco para conhecer nossa linha completa de produtos hidropônicos 
               e descobrir como podemos atender às suas necessidades.
             </p>
             <button 
               onClick={() => window.open('https://wa.me/5538999259691', '_blank')}
-              className="btn-primary px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:shadow-lg"
+              className="btn-primary px-6 sm:px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:shadow-lg text-sm sm:text-base w-full sm:w-auto"
             >
-              <Leaf className="w-5 h-5 mr-2" />
+              <Leaf className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
               Solicitar Orçamento
             </button>
           </div>
